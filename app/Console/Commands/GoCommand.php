@@ -61,6 +61,9 @@ class GoCommand extends Command
 
     }
 }
+        //* Seeders, Events, Listeners, Observers, Factory
+
+
                 //* RelationShip
 
         //belongsTo => записываем тем, которые принадлежат кому-то.

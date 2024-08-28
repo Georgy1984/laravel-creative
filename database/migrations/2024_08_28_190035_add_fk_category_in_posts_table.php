@@ -12,7 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->text('title')->change();
+
+            $table->foreignId('category_id')->index()->constrained('categories');
+
+
         });
     }
 
@@ -22,7 +25,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->string('title')->change();
+            $table->dropColumn('category_id');
         });
     }
 };

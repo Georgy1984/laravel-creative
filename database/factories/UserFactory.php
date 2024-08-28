@@ -1,8 +1,10 @@
 <?php
 
 namespace Database\Factories;
-
+use App\Models\User;
+use App\Models\Profile;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
@@ -11,6 +13,7 @@ use Illuminate\Support\Str;
  */
 class UserFactory extends Factory
 {
+
     /**
      * The current password being used by the factory.
      */
@@ -31,6 +34,13 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
         ];
     }
+
+//    public function configure(): Factory|UserFactory
+//    {
+//        return $this->afterCreating(function (\App\Models\User $user) {
+//            $user->profile()->save(Profile::factory()->make());
+//        });
+//    }
 
     /**
      * Indicate that the model's email address should be unverified.

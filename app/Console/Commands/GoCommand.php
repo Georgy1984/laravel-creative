@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\Category;
 use App\Models\Comment;
+use App\Models\Log;
 use App\Models\Post;
 use App\Models\Profile;
 use App\Models\Tag;
@@ -31,6 +32,12 @@ class GoCommand extends Command
      */
     public function handle()
     {
+
+//        Log::create(['message' => 'Это тестовое сообщение']);
+//        return 'Запись успешно создана';
+
+
+
 //        $posts = Post::first();
 //        $comments = Comment::first();
 //        $categories = Category::first();
@@ -53,15 +60,18 @@ class GoCommand extends Command
 //            'status' => 1
 //        ]);
 
-        $category = Category::first();
-        $comment = Comment::first();
-        dd($comment->category);
+//        $category = Category::first();
+//        $comment = Comment::first();
+//        dd($comment->category);
 
 
 
     }
 }
         //* Seeders, Events, Listeners, Observers, Factory
+
+
+
 
 
                 //* RelationShip

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->dateTime('published_at')->nullable();
             $table->unsignedInteger('status')->default(1);
             $table->foreignId('profile_id')->index()->constrained('profiles');
-
+            $table->softDeletes();
             $table->string('image_path')->nullable();
             $table->string('likes')->nullable();
             $table->text('content')->nullable();
@@ -32,6 +32,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('posts');
+        Schema::table('posts', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
+
     }
 };

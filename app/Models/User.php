@@ -14,6 +14,15 @@ class User extends Authenticatable
 //    protected $table = 'users';
     use HasFactory, Notifiable;
 
+    /**
+     * Метод «booted» модели.
+     */
+//    protected static function booted(): void
+//    {
+//        static::created(function (User $user) {
+//
+//        });
+//    }
 
 
     /**
